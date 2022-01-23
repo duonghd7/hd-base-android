@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
 
     <data>
+
         <variable
             name="viewModel"
             type="hd.base.android.domains.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".domains.main.MainActivity">
+        android:layout_height="match_parent">
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_hello_word"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hello World!"
@@ -23,5 +24,23 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_btn_sign_in"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:minWidth="100dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Sign In"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hello_word" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
