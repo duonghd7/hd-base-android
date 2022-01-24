@@ -35,13 +35,15 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(R.layout.fragment_sig
             }
 
             tvRegister.setOnClickListener {
-                val username = edtUsername.text.toString()
-                val password = edtPassword.text.toString()
-                if (username.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(context, "Invalid username or password!", Toast.LENGTH_SHORT).show()
-                } else {
-                    viewModel?.signUp(username, password)
-                }
+//                val username = edtUsername.text.toString()
+//                val password = edtPassword.text.toString()
+//                if (username.isEmpty() || password.isEmpty()) {
+//                    Toast.makeText(context, "Invalid username or password!", Toast.LENGTH_SHORT).show()
+//                } else {
+//                    viewModel?.signUp(username, password)
+//                }
+
+                viewModel?.signUp("", "")
             }
 
             tvSignIn.setOnClickListener {

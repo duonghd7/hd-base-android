@@ -1,7 +1,6 @@
 package hd.base.android.domains.auth
 
 import android.util.Log
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import hd.base.android.R
 import hd.base.android.base.BaseActivity
@@ -9,6 +8,7 @@ import hd.base.android.databinding.ActivityAuthBinding
 import hd.base.android.domains.auth.adapter.PagerAdapter
 import hd.base.android.domains.auth.sign_in.SignInFragment
 import hd.base.android.domains.auth.sign_up.SignUpFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * Create on 22/01/2022
@@ -21,7 +21,7 @@ class AuthActivity : BaseActivity<ActivityAuthBinding>(R.layout.activity_auth) {
         private val TAG = AuthActivity::class.simpleName ?: ""
     }
 
-    private val viewModel: AuthViewModel by viewModels()
+    private val viewModel: AuthViewModel by viewModel()
 
     override fun setBinVariable(binding: ActivityAuthBinding) {
         binding.viewModel = viewModel

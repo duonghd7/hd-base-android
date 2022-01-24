@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-kapt")
+    id("kotlin-parcelize")
 }
 apply {
     plugin("kotlin-android")
@@ -11,6 +12,7 @@ android {
     compileSdk = 31
     buildToolsVersion = "31.0.0"
     buildFeatures.dataBinding = true
+    buildFeatures.viewBinding = true
 
     /**
      * Create keyStore before build
@@ -45,6 +47,7 @@ android {
 
         multiDexEnabled = true
 
+        buildConfigField("String", "API_URL", "\"http://165.22.57.101:8082/\"")
         buildConfigField("String", "CustomKey1", "\"Value 1\"")
         buildConfigField("String", "CustomKey2", "\"Value 2\"")
     }
@@ -115,6 +118,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":modules:hd-core"))
+    implementation(project(":modules:hd-auth"))
+
     implementation("androidx.appcompat:appcompat:1.4.1")
     implementation("androidx.activity:activity-ktx:1.4.0")
     implementation("androidx.fragment:fragment-ktx:1.4.0")

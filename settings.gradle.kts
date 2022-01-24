@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "hd-base-android"
 include(":app")
+include(":modules:hd-core")
+include(":modules:hd-auth")
